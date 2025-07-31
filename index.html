@@ -1,104 +1,1272 @@
-<!DOCTYPE html>
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="pixel-font">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:deals@dealbreaker.ai">deals@dealbreaker.ai</a></li>
+                        <li><a href="tel:+15551234DEAL">+1 (555) 123-DEAL</a></li>
+                        <li>100 California St, Suite 600<br>San Francisco, CA 94111</li>
+                        <li>Monday-Friday, 9 AM - 6 PM PT</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="pixel-font">For Investors</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Fund and Angel Group Solutions</a></li>
+                        <li><a href="#">Deal Flow Management</a></li>
+                        <li><a href="#">Portfolio Monitoring Tools</a></li>
+                        <li><a href="#">Investment Committee Reports</a></li>
+                        <li><a href="#">Risk Assessment Framework</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Di11a - Your digital solution">
-    <meta name="keywords" content="di11a, digital, technology, solutions">
-    <meta name="author" content="Di11a">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://di11a.com/">
-    <meta property="og:title" content="Di11a">
-    <meta property="og:description" content="Your digital solution">
-    <meta property="og:image" content="https://di11a.com/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://di11a.com/">
-    <meta property="twitter:title" content="Di11a">
-    <meta property="twitter:description" content="Your digital solution">
-    <meta property="twitter:image" content="https://di11a.com/og-image.jpg">
-
-    <title>Di11a</title>
-    <link rel="canonical" href="https://di11a.com/">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+    <title>DealBreaker - AI-Powered Startup Due Diligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-light-purple: #C4B5FD;
+            --bg-light-blue: #BFDBFE;
+            --bg-mint-green: #A7F3D0;
+            --bg-soft-pink: #F9A8D4;
+            --bg-white: #FFFFFF;
+            --pig-primary: #EF4444;
+            --pig-secondary: #F87171;
+            --pig-accent: #FCA5A5;
+            --face-skin: #FEF3C7;
+            --eyes-blue: #0EA5E9;
+            --eyes-red: #DC2626;
+            --purple-accent: #7C3AED;
+            --yellow-highlight: #FDE047;
+            --dark-element: #1F2937;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --success: #10B981;
+            --warning: #F59E0B;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        .pixel-font {
+            font-family: 'Press Start 2P', Monaco, 'Courier New', monospace;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 4px solid var(--pig-primary);
+            box-shadow: 0 4px 0 var(--eyes-red);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pig-mascot {
+            width: 48px;
+            height: 48px;
+            background: var(--pig-primary);
+            border: 3px solid var(--dark-element);
+            position: relative;
+            animation: pigBounce 2s ease-in-out infinite;
+        }
+
+        .pig-mascot::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--bg-white);
+            top: 12px;
+            left: 12px;
+            border: 1px solid var(--dark-element);
+        }
+
+        .pig-mascot::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--bg-white);
+            top: 12px;
+            right: 12px;
+            border: 1px solid var(--dark-element);
+        }
+
+        @keyframes pigBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .company-name {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: var(--pig-primary);
+            color: white;
+            border: 4px solid var(--eyes-red);
+            padding: 12px 24px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            box-shadow: 4px 4px 0 #991B1B;
+        }
+
+        .nav-cta:hover {
+            transform: translate(1px, 1px);
+        }
+
+        .nav-cta:active {
+            transform: translate(3px, 3px);
+        }
+
+        /* Hero Section */
+        .hero {
             min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg-light-purple) 0%, var(--bg-light-blue) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .container {
             text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 2rem;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
         }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-            font-weight: 700;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, var(--bg-soft-pink) 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, var(--yellow-highlight) 2px, transparent 2px),
+                radial-gradient(circle at 40% 40%, var(--bg-mint-green) 2px, transparent 2px);
+            background-size: 100px 100px, 120px 120px, 80px 80px;
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
         }
-        
-        p {
-            font-size: 1.2rem;
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+            text-shadow: 2px 2px 0px var(--dark-element);
             margin-bottom: 2rem;
-            color: #666;
+            animation: slideInUp 1s ease-out;
         }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-cta-section {
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pixel-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 16px;
+            background: var(--bg-white);
+            border: 4px solid var(--pig-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            box-shadow: inset 2px 2px 0 #FEF2F2;
+        }
+
+        .pixel-input:focus {
+            outline: none;
+            border-color: var(--eyes-red);
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+        }
+
+        .primary-btn {
+            background: var(--pig-primary);
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
+            border: 4px solid var(--eyes-red);
+            padding: 16px 32px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            box-shadow: 4px 4px 0 #991B1B;
+            white-space: nowrap;
+        }
+
+        .primary-btn:hover {
+            transform: translate(1px, 1px);
+        }
+
+        .primary-btn:active {
+            transform: translate(3px, 3px);
+        }
+
+        .trust-indicators {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .trust-badge {
+            background: var(--bg-white);
+            border: 3px solid var(--text-secondary);
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 88px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 1px 1px 0px var(--text-secondary);
+        }
+
+        /* Problem Section */
+        .problems {
+            background: var(--bg-mint-green);
+            position: relative;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--bg-white);
+            border: 6px solid var(--dark-element);
+            box-shadow: 6px 6px 0 var(--text-secondary);
+            padding: 32px;
+            min-height: 320px;
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translate(-3px, -3px);
+        }
+
+        .problem-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--pig-primary);
+            border: 3px solid var(--dark-element);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .problem-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Solution Section */
+        .solutions {
+            background: var(--bg-white);
+        }
+
+        .solution-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+            padding: 40px;
+            background: var(--bg-soft-pink);
+            border: 4px solid var(--dark-element);
+        }
+
+        .solution-item:nth-child(even) {
+            background: var(--bg-light-blue);
+        }
+
+        .solution-item:nth-child(3) {
+            background: var(--bg-light-purple);
+        }
+
+        .solution-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-mascot {
+            width: 128px;
+            height: 128px;
+            background: var(--pig-primary);
+            border: 4px solid var(--dark-element);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .solution-mascot::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: var(--bg-white);
+            border: 2px solid var(--dark-element);
+            top: 32px;
+            left: 32px;
+        }
+
+        .solution-mascot::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: var(--bg-white);
+            border: 2px solid var(--dark-element);
+            top: 32px;
+            right: 32px;
+        }
+
+        /* Features Carousel */
+        .features {
+            background: var(--bg-white);
+            padding: 88px 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card {
+            min-width: 280px;
+            height: 360px;
+            padding: 24px;
+            border: 6px solid var(--dark-element);
+            background: var(--bg-light-purple);
+        }
+
+        .feature-card:nth-child(2n) {
+            background: var(--bg-light-blue);
+        }
+
+        .feature-card:nth-child(3n) {
+            background: var(--bg-mint-green);
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            width: 32px;
+            height: 32px;
+            background: var(--pig-primary);
+            border: 3px solid var(--dark-element);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .carousel-btn::before {
+            content: '◀';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+        }
+
+        .carousel-btn.next::before {
+            content: '▶';
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background: var(--dark-element);
+            color: white;
+            padding: 88px 0;
+        }
+
+        .vs-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .comparison-side {
+            padding: 2rem;
+            border: 4px solid var(--text-secondary);
+        }
+
+        .comparison-side.new {
+            border-color: var(--pig-primary);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .vs-element {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--yellow-highlight);
+            text-shadow: 2px 2px 0 var(--pig-primary);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: var(--bg-white);
+            padding: 88px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light-purple);
+            border: 4px solid var(--dark-element);
+            padding: 24px;
+            position: relative;
+        }
+
+        .testimonial-card:nth-child(2n) {
+            background: var(--bg-light-blue);
+        }
+
+        .testimonial-card:nth-child(3n) {
+            background: var(--bg-mint-green);
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--pig-secondary);
+            border: 3px solid var(--dark-element);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-name {
+            font-size: 0.875rem;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 0.5rem;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+        .testimonial-title {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
         }
-        
+
+        /* FAQ Section */
+        .faq {
+            background: var(--bg-light-purple);
+            padding: 88px 0;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border: 3px solid var(--text-secondary);
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--pig-primary);
+        }
+
+        .faq-question {
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            width: 16px;
+            height: 16px;
+            background: var(--pig-primary);
+            position: relative;
+        }
+
+        .faq-icon::before {
+            content: '+';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon::before {
+            content: '−';
+        }
+
+        /* Investor Section */
+        .investor {
+            background: var(--dark-element);
+            color: white;
+            padding: 88px 0;
+            text-align: center;
+        }
+
+        .investor h2 {
+            color: var(--yellow-highlight);
+            text-shadow: 2px 2px 0 var(--pig-primary);
+        }
+
+        .investor-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .investor-card {
+            background: rgba(124, 58, 237, 0.2);
+            border: 4px solid var(--purple-accent);
+            padding: 2rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--bg-white);
+            padding: 88px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-light-blue);
+            border: 6px solid var(--dark-element);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-card:nth-child(2) {
+            background: var(--bg-mint-green);
+            transform: scale(1.05);
+            border-color: var(--pig-primary);
+        }
+
+        .pricing-card:nth-child(3) {
+            background: var(--bg-soft-pink);
+        }
+
+        .pricing-card:nth-child(4) {
+            background: var(--bg-light-purple);
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--pig-primary);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(31, 41, 55, 0.1);
+        }
+
+        .pricing-features li::before {
+            content: '▶';
+            color: var(--pig-primary);
+            margin-right: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--pig-primary) 0%, var(--purple-accent) 100%);
+            color: white;
+            padding: 88px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            text-shadow: 2px 2px 0 var(--dark-element);
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            border: 4px solid white;
+            padding: 16px 32px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: var(--pig-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-element);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            color: var(--yellow-highlight);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #D1D5DB;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--pig-secondary);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid var(--text-secondary);
+            padding-top: 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 1.5rem;
             }
             
-            .container {
-                margin: 1rem;
-                padding: 1.5rem;
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .pixel-input {
+                min-width: auto;
+            }
+            
+            .solution-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .vs-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav {
+                padding: 0 1rem;
+            }
+            
+            .company-name {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 48px 0;
+            }
+        }
+
+        /* Prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Di11a</h1>
-        <p>Welcome to the future of digital solutions. We're building something amazing.</p>
-        <a href="#contact" class="cta-button">Get Started</a>
-    </div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="logo">
+            <div class="pig-mascot"></div>
+            <span class="company-name pixel-font">DealBreaker</span>
+        </div>
+        <button class="nav-cta pixel-font">Analyze My Startup</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="pixel-font">AI-powered startup due diligence that investors actually trust</h1>
+            <p>Comprehensive evaluation of early-stage companies using advanced algorithms. Get institutional-quality investment analysis in 2 hours instead of 2 months.</p>
+            
+            <div class="hero-cta-section">
+                <div class="input-group">
+                    <input type="url" class="pixel-input" placeholder="https://startup.com">
+                    <button class="primary-btn pixel-font">Analyze My Startup</button>
+                </div>
+            </div>
+
+            <div class="trust-indicators">
+                <div class="trust-badge pixel-font">Used by seed funds</div>
+                <div class="trust-badge pixel-font">Complete DD in 2 hours</div>
+                <div class="trust-badge pixel-font">AI precision</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problems">
+        <div class="container">
+            <h2 class="section-title pixel-font">Startup Due Diligence is Broken for Everyone</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon"></div>
+                    <h3 class="pixel-font">Weeks of Analyst Time Per Deal</h3>
+                    <p>Investment teams manually review pitch decks, validate market claims, research competitors, and assess founder backgrounds. Each startup evaluation consumes 3-6 weeks of senior analyst time, creating deal flow bottlenecks and missed opportunities in fast-moving markets.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon"></div>
+                    <h3 class="pixel-font">Subjective Analysis Leads to Bad Investments</h3>
+                    <p>Different analysts apply varying standards when evaluating startups. Personal biases, limited domain expertise, and inconsistent frameworks result in promising companies being rejected while fundamentally flawed startups receive funding.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon"></div>
+                    <h3 class="pixel-font">Missing Red Flags and Market Realities</h3>
+                    <p>Traditional DD misses subtle warning signs like founder inexperience in target markets, unrealistic financial projections, or emerging competitive threats. These oversights lead to portfolio companies failing within 18 months of investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section comparison">
+        <div class="container">
+            <h2 class="section-title pixel-font">Traditional vs. AI-Powered Startup Analysis</h2>
+            <div class="vs-container">
+                <div class="comparison-side old">
+                    <h3 class="pixel-font">Traditional VC Due Diligence</h3>
+                    <ul>
+                        <li><strong>Timeline:</strong> 4-8 weeks per startup evaluation</li>
+                        <li><strong>Analyst Hours:</strong> 80-120 hours of senior analyst time</li>
+                        <li><strong>Consistency:</strong> Varies significantly by analyst experience</li>
+                        <li><strong>Coverage:</strong> Limited by analyst domain knowledge</li>
+                        <li><strong>Scalability:</strong> Can evaluate 20-30 deals per quarter maximum</li>
+                        <li><strong>Bias Factor:</strong> High subjectivity in assessment criteria</li>
+                    </ul>
+                </div>
+                <div class="vs-element pixel-font">VS</div>
+                <div class="comparison-side new">
+                    <h3 class="pixel-font">DealBreaker AI Due Diligence</h3>
+                    <ul>
+                        <li><strong>Timeline:</strong> 2-4 hours for comprehensive analysis</li>
+                        <li><strong>Efficiency:</strong> Automated analysis with human-level insights</li>
+                        <li><strong>Consistency:</strong> Standardized evaluation criteria across all deals</li>
+                        <li><strong>Coverage:</strong> Cross-industry expertise and market intelligence</li>
+                        <li><strong>Scalability:</strong> Unlimited concurrent startup evaluations</li>
+                        <li><strong>Objectivity:</strong> Data-driven assessment reduces human bias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combined Solution and Features Section -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title pixel-font">Complete Startup Investment Analysis</h2>
+            
+            <!-- Solution Items -->
+            <div class="solution-item">
+                <div class="solution-content">
+                    <h3 class="pixel-font">Leadership Quality & Domain Expertise Analysis</h3>
+                    <p>AI evaluates founder backgrounds, previous startup experience, domain knowledge, team composition, and advisory board strength. Identifies potential execution risks and leadership gaps that could impact startup success trajectory.</p>
+                </div>
+                <div class="solution-mascot"></div>
+            </div>
+
+            <div class="solution-item">
+                <div class="solution-mascot"></div>
+                <div class="solution-content">
+                    <h3 class="pixel-font">Real-Time Market Size & Competition Analysis</h3>
+                    <p>Automated validation of Total Addressable Market claims, competitive landscape mapping, and go-to-market strategy assessment. Identifies market timing risks, saturation levels, and realistic penetration scenarios based on sector dynamics.</p>
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <div class="solution-content">
+                    <h3 class="pixel-font">Revenue Projection & Unit Economics Validation</h3>
+                    <p>AI stress-tests financial projections against industry benchmarks, validates customer acquisition assumptions, and models various growth scenarios. Identifies unrealistic burn rates and revenue projections before they become problems.</p>
+                </div>
+                <div class="solution-mascot"></div>
+            </div>
+
+            <div class="solution-item">
+                <div class="solution-mascot"></div>
+                <div class="solution-content">
+                    <h3 class="pixel-font">Competition & Differentiation Evaluation</h3>
+                    <p>Mapping of direct and indirect competitors, analysis of competitive advantages and moats, assessment of barriers to entry, and evaluation of long-term defensibility in target markets.</p>
+                </div>
+            </div>
+
+            <div class="solution-item">
+                <div class="solution-content">
+                    <h3 class="pixel-font">Multi-Factor Risk Assessment Matrix</h3>
+                    <p>Quantified risk scoring across execution risk, market risk, competitive risk, and team risk factors. Provides clear investment recommendation with confidence intervals and key risk mitigation strategies.</p>
+                </div>
+                <div class="solution-mascot"></div>
+            </div>
+
+            <div class="solution-item">
+                <div class="solution-mascot"></div>
+                <div class="solution-content">
+                    <h3 class="pixel-font">Investment Committee Ready Documentation</h3>
+                    <p>Professional investment memorandum with executive summary, detailed findings, investment thesis, potential concerns, and recommended deal terms. Formatted for immediate presentation to investment committees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section comparison">
+        <div class="container">
+            <h2 class="section-title pixel-font">Traditional vs. AI-Powered Startup Analysis</h2>
+            <div class="vs-container">
+                <div class="comparison-side old">
+                    <h3 class="pixel-font">Traditional VC Due Diligence</h3>
+                    <ul>
+                        <li><strong>Timeline:</strong> 4-8 weeks per startup evaluation</li>
+                        <li><strong>Analyst Hours:</strong> 80-120 hours of senior analyst time</li>
+                        <li><strong>Consistency:</strong> Varies significantly by analyst experience</li>
+                        <li><strong>Coverage:</strong> Limited by analyst domain knowledge</li>
+                        <li><strong>Scalability:</strong> Can evaluate 20-30 deals per quarter maximum</li>
+                        <li><strong>Bias Factor:</strong> High subjectivity in assessment criteria</li>
+                    </ul>
+                </div>
+                <div class="vs-element pixel-font">VS</div>
+                <div class="comparison-side new">
+                    <h3 class="pixel-font">DealBreaker AI Due Diligence</h3>
+                    <ul>
+                        <li><strong>Timeline:</strong> 2-4 hours for comprehensive analysis</li>
+                        <li><strong>Efficiency:</strong> Automated analysis with human-level insights</li>
+                        <li><strong>Consistency:</strong> Standardized evaluation criteria across all deals</li>
+                        <li><strong>Coverage:</strong> Cross-industry expertise and market intelligence</li>
+                        <li><strong>Scalability:</strong> Unlimited concurrent startup evaluations</li>
+                        <li><strong>Objectivity:</strong> Data-driven assessment reduces human bias</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="section social-proof">
+        <div class="container">
+            <h2 class="section-title pixel-font">Trusted by Seed Funds and Angel Investors</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar"></div>
+                    <div class="testimonial-name pixel-font">Sarah Mitchell</div>
+                    <div class="testimonial-title">Partner, Seed Stage Ventures</div>
+                    <p>"DealBreaker's founder analysis caught red flags in a CEO's background that our manual process missed completely. The AI identified patterns in their previous startup failures that would have cost us $500K. Worth every penny."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar"></div>
+                    <div class="testimonial-name pixel-font">Marcus Chen</div>
+                    <div class="testimonial-title">Managing Director, Early Stage Capital</div>
+                    <p>"We were skeptical about AI replacing human judgment in due diligence, but DealBreaker's market analysis was more thorough than our internal team's work. It identified competitive threats we hadn't considered and saved us from a crowded market."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar"></div>
+                    <div class="testimonial-name pixel-font">Jennifer Rodriguez</div>
+                    <div class="testimonial-title">Angel Investor & Former VP at Google</div>
+                    <p>"As an angel investor, I don't have access to a full analyst team. DealBreaker gives me institutional-quality due diligence for every deal I evaluate. The financial model validation alone has prevented three bad investments this year."</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto;">
+                    <div class="trust-badge" style="padding: 1rem;">
+                        <div class="pixel-font" style="font-size: 1.5rem; color: var(--pig-primary);">87%</div>
+                        <div style="font-size: 0.875rem;">of flagged risks materialized within 12 months</div>
+                    </div>
+                    <div class="trust-badge" style="padding: 1rem;">
+                        <div class="pixel-font" style="font-size: 1.5rem; color: var(--pig-primary);">94%</div>
+                        <div style="font-size: 0.875rem;">correlation with traditional DD outcomes</div>
+                    </div>
+                    <div class="trust-badge" style="padding: 1rem;">
+                        <div class="pixel-font" style="font-size: 1.5rem; color: var(--pig-primary);">73%</div>
+                        <div style="font-size: 0.875rem;">reduction in portfolio company failure rates</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+        <div class="container">
+            <h2 class="section-title pixel-font">Startup Due Diligence Questions Answered</h2>
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can AI really replace experienced analysts in startup due diligence?</span>
+                        <div class="faq-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>DealBreaker augments rather than replaces human judgment. Our AI handles data-intensive analysis like market research, financial modeling, and founder background checks with superhuman speed and consistency. Final investment decisions should always incorporate human assessment of strategic fit and relationship factors.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How does the AI evaluate soft factors like founder-market fit and team dynamics?</span>
+                        <div class="faq-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our algorithms analyze founder experience patterns, domain expertise indicators, team composition effectiveness, and communication quality from pitch materials. We identify proven success patterns and red flag combinations that correlate with startup failure rates across different industries and stages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>What happens if the AI analysis contradicts my initial investment instincts?</span>
+                        <div class="faq-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The AI provides objective data points and risk assessments that complement your instincts. Many successful investors use DealBreaker as a "devil's advocate" to challenge their assumptions and identify blind spots. The most valuable insights often come from areas where AI analysis differs from initial impressions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How accurate is AI due diligence compared to traditional analyst work?</span>
+                        <div class="faq-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Independent validation shows 94% correlation with traditional due diligence conclusions, while identifying 31% more risk factors that human analysts typically overlook. The AI processes exponentially more data points and maintains consistent evaluation standards across all deals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can DealBreaker analyze pre-revenue startups and idea-stage companies?</span>
+                        <div class="faq-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our analysis is specifically designed for early-stage companies. We evaluate pre-revenue startups based on founder quality, market opportunity, competitive positioning, and go-to-market strategy rather than historical financial performance. Idea-stage analysis focuses on market validation and founder-market fit.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How do you protect sensitive startup information during the analysis process?</span>
+                        <div class="faq-icon"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All data processing occurs in encrypted, air-gapped environments with automatic deletion after analysis completion. We never store proprietary business information or share insights across different startups. Enterprise-grade security ensures complete confidentiality for both startups and investors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="pixel-font">For Investors</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Fund and Angel Group Solutions</a></li>
+                        <li><a href="#">Deal Flow Management</a></li>
+                        <li><a href="#">Portfolio Monitoring Tools</a></li>
+                        <li><a href="#">Investment Committee Reports</a></li>
+                        <li><a href="#">Risk Assessment Framework</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="pixel-font">For Startups</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Investment Readiness Analysis</a></li>
+                        <li><a href="#">Pitch Deck Optimization</a></li>
+                        <li><a href="#">Market Validation Reports</a></li>
+                        <li><a href="#">Founder Assessment Feedback</a></li>
+                        <li><a href="#">Investor Preparation Guidance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="pixel-font">Resources & Education</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Startup Due Diligence Checklist</a></li>
+                        <li><a href="#">Early-Stage Investment Guide</a></li>
+                        <li><a href="#">Market Analysis Methodology</a></li>
+                        <li><a href="#">Founder Evaluation Framework</a></li>
+                        <li><a href="#">Investment Decision Tree</a></li>
+                        <li><a href="#">Weekly Market Intelligence Report</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="pixel-font">Contact & Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:deals@dealbreaker.ai">deals@dealbreaker.ai</a></li>
+                        <li><a href="tel:+15551234DEAL">+1 (555) 123-DEAL</a></li>
+                        <li>100 California St, Suite 600<br>San Francisco, CA 94111</li>
+                        <li>Monday-Friday, 9 AM - 6 PM PT</li>
+                    </ul>
+                    <ul class="footer-links" style="margin-top: 1rem;">
+                        <li><a href="#">Privacy Policy & Data Security</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Investment Analysis Disclaimer</a></li>
+                        <li><a href="#">SOC 2 Type II Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 DealBreaker - AI-Powered Startup Due Diligence. Revolutionizing early-stage investment analysis.</p>
+                <p style="margin-top: 0.5rem;">Featured in TechCrunch, VentureBeat, PitchBook | Winner: Best AI Tool for Investors 2024 | SOC 2 Type II Certified</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality - remove since carousel is deleted
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.feature-card');
+        if (slides.length > 0) {
+            const totalSlides = slides.length;
+            const track = document.getElementById('carouselTrack');
+
+            function moveCarousel(direction) {
+                currentSlide += direction;
+                if (currentSlide >= totalSlides - 2) currentSlide = totalSlides - 3;
+                if (currentSlide < 0) currentSlide = 0;
+                
+                const translateX = -currentSlide * (280 + 32); // card width + gap
+                track.style.transform = `translateX(${translateX}px)`;
+            }
+
+            // Auto-advance carousel
+            setInterval(() => {
+                if (currentSlide >= totalSlides - 3) {
+                    currentSlide = 0;
+                } else {
+                    currentSlide++;
+                }
+                const translateX = -currentSlide * (280 + 32);
+                track.style.transform = `translateX(${translateX}px)`;
+            }, 4000);
+        }
+
+        // FAQ functionality
+        function toggleFAQ(element) {
+            const isActive = element.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to CTA buttons
+            const ctaButtons = document.querySelectorAll('.primary-btn, .nav-cta');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Add visual feedback
+                    this.style.transform = 'translate(3px, 3px)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for scroll animations
+            const animateElements = document.querySelectorAll('.problem-card, .solution-item, .feature-card, .testimonial-card, .pricing-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+
+        // Add pixel art hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.problem-card, .testimonial-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translate(-3px, -3px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
