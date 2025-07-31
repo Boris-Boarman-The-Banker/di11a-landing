@@ -319,6 +319,26 @@
             border: 3px solid var(--dark-element);
             margin-bottom: 1.5rem;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Press Start 2P', monospace;
+            color: white;
+            font-size: 24px;
+            text-shadow: 2px 2px 0 var(--dark-element);
+        }
+
+        /* Specific icons for each problem */
+        .problem-card:nth-child(1) .problem-icon::before {
+            content: '⏰';
+        }
+
+        .problem-card:nth-child(2) .problem-icon::before {
+            content: '❌';
+        }
+
+        .problem-card:nth-child(3) .problem-icon::before {
+            content: '⚠️';
         }
 
         .problem-card h3 {
