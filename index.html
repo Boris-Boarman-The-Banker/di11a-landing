@@ -836,6 +836,139 @@
             }
         }
 
+        /* Beta Signup Popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+        }
+
+        .popup-window {
+            background: var(--bg-white);
+            border: 6px solid var(--dark-element);
+            box-shadow: 8px 8px 0 var(--text-secondary);
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: popupSlideIn 0.3s ease-out;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            background: var(--pig-primary);
+            border: 3px solid var(--dark-element);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: transform 0.1s ease;
+        }
+
+        .popup-close:hover {
+            transform: translate(1px, 1px);
+        }
+
+        .popup-close::before {
+            content: '×';
+        }
+
+        .popup-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--pig-primary);
+            text-shadow: 1px 1px 0 var(--text-secondary);
+        }
+
+        .popup-message {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .popup-input {
+            padding: 16px;
+            background: var(--bg-light-purple);
+            border: 4px solid var(--pig-primary);
+            font-family: 'Helvetica Neue', 'Helvetica', 'Arial', system-ui, sans-serif;
+            font-size: 1rem;
+            box-shadow: inset 2px 2px 0 rgba(124, 58, 237, 0.2);
+        }
+
+        .popup-input:focus {
+            outline: none;
+            border-color: var(--eyes-red);
+            box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+        }
+
+        .popup-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .popup-confirm {
+            background: var(--pig-primary);
+            color: white;
+            border: 4px solid var(--eyes-red);
+            padding: 16px 32px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            box-shadow: 4px 4px 0 #B45309;
+            font-family: 'Cygnito Mono', Monaco, 'Courier New', monospace;
+        }
+
+        .popup-confirm:hover {
+            transform: translate(1px, 1px);
+        }
+
+        .popup-confirm:active {
+            transform: translate(3px, 3px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes popupSlideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         /* Prefers reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -1132,7 +1265,72 @@
         </div>
     </footer>
 
+    <!-- Beta Signup Popup -->
+    <div class="popup-overlay" id="betaPopup">
+        <div class="popup-window">
+            <button class="popup-close" onclick="closeBetaPopup()"></button>
+            <h3 class="popup-title pixel-font">Beta Release Coming Soon! 🚀</h3>
+            <p class="popup-message">We are releasing the beta soon. Do you want to signup to be notified?</p>
+            <form class="popup-form" onsubmit="submitBetaSignup(event)">
+                <input 
+                    type="url" 
+                    class="popup-input" 
+                    placeholder="https://linkedin.com/in/yourprofile" 
+                    id="linkedinInput"
+                    required
+                >
+                <button type="submit" class="popup-confirm">Confirm</button>
+            </form>
+        </div>
+    </div>
+
     <script>
+        // Beta Popup functionality
+        function showBetaPopup() {
+            const popup = document.getElementById('betaPopup');
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeBetaPopup() {
+            const popup = document.getElementById('betaPopup');
+            popup.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        function submitBetaSignup(event) {
+            event.preventDefault();
+            const linkedinInput = document.getElementById('linkedinInput');
+            const linkedinUrl = linkedinInput.value;
+            
+            // Basic LinkedIn URL validation
+            if (!linkedinUrl.includes('linkedin.com')) {
+                alert('Please enter a valid LinkedIn profile URL');
+                return;
+            }
+            
+            // Simulate form submission (you can replace this with actual API call)
+            alert('Thank you for signing up! We\'ll notify you when the beta is ready.');
+            
+            // Clear the form and close popup
+            linkedinInput.value = '';
+            closeBetaPopup();
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('betaPopup').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeBetaPopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBetaPopup();
+            }
+        });
+
         // Analysis Carousel functionality
         let currentAnalysisSlide = 0;
         const analysisSlides = document.querySelectorAll('.analysis-card');
@@ -1210,11 +1408,15 @@
             // Add click handlers to CTA buttons
             const ctaButtons = document.querySelectorAll('.primary-btn, .nav-cta');
             ctaButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    
                     // Add visual feedback
                     this.style.transform = 'translate(3px, 3px)';
                     setTimeout(() => {
                         this.style.transform = '';
+                        // Show beta popup after visual feedback
+                        showBetaPopup();
                     }, 150);
                 });
             });
